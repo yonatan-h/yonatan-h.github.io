@@ -1,0 +1,385 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: newYorkTimes;
+  src: url(./Chomsky.otf);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap");
+/*general styles*/
+
+body {
+  background-color: antiquewhite;
+  font-family: "Raleway", sans-serif;
+}
+/*nav*/
+nav {
+  display: flex;
+  margin: auto;
+  align-items: center;
+
+  min-height: 10vh;
+  background-color: midnightblue;
+  color: white;
+}
+
+nav > h1 {
+  flex: 1;
+  margin: 0rem 2rem;
+
+  font-family: newYorkTimes;
+  font-size: 4rem;
+  font-weight: 100;
+  color: white;
+}
+
+nav > ul {
+  flex: 1;
+  font-size: 1.5rem;
+
+  /*to space around the lists*/
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+/*non nav universals*/
+
+main > header {
+  font-size: 4rem;
+
+  height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  padding-bottom: 10vh;
+}
+
+/*for centering articles and sections */
+/* articles and sections center their hs too*/
+main,
+article,
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article,
+section {
+  margin-bottom: 10rem;
+}
+
+article,
+section {
+  width: 65%;
+}
+
+/*font sizes and margins of h and p*/
+article > h2 {
+  margin: 2rem;
+}
+
+article p,
+section p {
+  margin: 1.5rem 0rem;
+}
+
+p,
+button,
+li {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+
+h1 {
+  font-size: 4reem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+.author {
+  color: teal;
+}
+.a-to-home {
+  margin: 3rem;
+  text-decoration: none;
+  color: midnightblue;
+}
+
+/* index specific style*/
+
+.index-header {
+  height: auto; /*not 70vh or sth*/
+  font-size: 3rem;
+  padding: 3rem;
+}
+
+.index-section {
+  width: 50%;
+  min-height: 30vh;
+
+  padding: 2rem;
+  margin: 1rem;
+
+  align-items: normal; /*undo align items center*/
+}
+
+.index-section > h2 {
+  margin: 1rem 0rem;
+}
+
+.index-section button {
+  padding: 0.5rem 1rem;
+  margin: 1rem 0rem;
+
+  background: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 3px solid white;
+}
+
+.index-section:nth-of-type(even) {
+  background-color: aquamarine;
+  color: black;
+}
+
+.index-section:nth-of-type(odd) {
+  background-color: blue;
+  color: white;
+}
+
+.index-section:nth-of-type(even) button {
+  color: black;
+}
+
+.index-section:nth-of-type(odd) button {
+  color: white;
+}
+.index-section button:hover {
+  background-color: white;
+  color: black;
+}
+
+/*clubs specific style*/
+
+.clubs-header {
+  color: white;
+
+  animation-fill-mode: forwards;
+  animation-name: shadowAppear;
+  animation-duration: 1.5s;
+}
+@keyframes shadowAppear {
+  0% {
+    text-shadow: 0rem 0rem 1rem black;
+  }
+
+  100% {
+    text-shadow: 1rem 1rem 1rem black;
+  }
+}
+
+.clubs-article {
+  min-height: 70vh;
+}
+
+.clubs-article > h2 {
+  text-decoration: underline;
+}
+
+.clubs-article:nth-of-type(1) > h2 {
+  color: brown;
+}
+.clubs-article:nth-of-type(2) > h2 {
+  color: darkslateblue;
+}
+.clubs-article:nth-of-type(3) > h2 {
+  color: red;
+}
+.clubs-article:nth-of-type(4) > h2 {
+  color: darkgreen;
+}
+.clubs-article:nth-of-type(5) > h2 {
+  color: magenta;
+}
+
+/*essays specific style*/
+.essays-body {
+  color: white;
+  background-image: linear-gradient(
+    to bottom,
+    midnightblue,
+    purple,
+    midnightblue
+  );
+}
+
+.essays-header {
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-name: blurToFocus;
+}
+
+@keyframes blurToFocus {
+  0% {
+    filter: blur(100px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+.essays-article {
+  min-height: 100vh;
+  padding: 3rem;
+  border-radius: 1rem;
+  border: 1rem solid rgba(255, 255, 255, 0.3);
+}
+
+.essays-article p.author {
+  color: lightblue;
+}
+
+/*culture day specific style*/
+
+.cultureday-header,
+.cultureday-main h2 {
+  background-image: url(./culturegallery/main.jpg);
+  background-size: 50%;
+  background-attachment: fixed;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.cultureday-main > h2 {
+  font-weight: bolder;
+  font-size: 3em;
+}
+
+.cultureday-section:nth-of-type(2) > p:nth-of-type(n + 3) {
+  border: 0.5rem solid rgba(0, 0, 255, 0.3);
+  padding: 2rem;
+}
+
+.cultureday-gallery h2 {
+  font-size: 4rem;
+  padding: 4rem;
+}
+
+.cultureday-gallery img {
+  margin: 1rem 0rem;
+}
+/*teachers comment style*/
+
+.teacherscomment-article {
+  background-color: lightblue;
+  padding: 2rem;
+  border-radius: 3rem;
+  border-top-left-radius: 0rem;
+
+  box-shadow: 1rem 1rem black;
+}
+
+/*about us style*/
+.teacherscomment-header,
+.aboutus-header {
+  height: auto;
+  padding: 3rem;
+  font-size: 2rem; /*too big*/
+}
+.aboutus-section {
+  margin: 2rem;
+}
+
+/*for mobile*/
+
+/*
+break points are, width = 600 -phone region- 768(landscape tablets), 992px(laptops), 1200px(Xbig laptops)
+*/
+
+@media only screen and (max-width: 992px) {
+  /*from tablets to split screen in desktop*/
+  html {
+    font-size: 12px;
+    color: red;
+  }
+  .index-header {
+    font-size: 2rem;
+  }
+  .index-section {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  /* > 600 to 768*/
+  html {
+    font-size: 12px;
+    color: red;
+  }
+
+  nav li {
+    font-size: 1.2rem;
+  }
+
+  .index-header {
+    font-size: 1.5rem;
+  }
+
+  .index-section {
+    width: 85%;
+  }
+
+  article,
+  section {
+    width: 85%;
+  }
+  .cultureday-main img {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /*0 to 600 tiny phones*/
+  html {
+    color: blue;
+    font-size: 11px;
+  }
+
+  nav h1 {
+    font-size: 3rem;
+  }
+
+  nav ul {
+    flex: 2;
+  }
+
+  nav li {
+    font-size: 1rem;
+  }
+
+  .index-header {
+    font-size: 1.2rem;
+  }
+
+  .essays-article {
+    width: 95%;
+    padding: 1rem;
+  }
+}
