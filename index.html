@@ -1,0 +1,73 @@
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV</title>
+    <style>
+      body {
+        font-family: monospace;
+        background-color: black;
+        color: back;
+        overflow: hidden;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .mouse-follower {
+        width: 50vmax;
+        height: 50vmax;
+        border-radius: 100%;
+
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transform: translate(-50%, -50%);
+
+        background-color: white;
+        box-shadow: 0 0 5rem white;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Yonatan Haile</h1>
+
+      <section>
+        <h2>Who Am I?</h2>
+        <p>About to be a third year software student in AAiT</p>
+        <p>Currently exploring the vast land of Web Development</p>
+      </section>
+
+      <section>
+        <h2>Have been trying...</h2>
+        <ul>
+          <li>Svelte</li>
+          <li>Svelte Kit</li>
+          <li>Express Js</li>
+          <li>Node js (as you may have figured)</li>
+          <li>GNU (equivalent of Adobe Photoshop)</li>
+          <li>Inkscape (equivalent of Adobe Illustrator)</li>
+          <li>Figma</li>
+          <li>Linux</li>
+          <li>MySql-Server</li>
+        </ul>
+        <p>I am Eager to learn and apply these skills</p>
+      </section>
+    </main>
+
+    <div class="mouse-follower"></div>
+    <script>
+      const mouseFollower = document.querySelector(".mouse-follower");
+      document.addEventListener("mousemove", (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+        const positionCss = `top:${y}px; left:${x}px;`;
+        mouseFollower.setAttribute("style", positionCss);
+      });
+
+      document.alert("Please use a desktop/laptop for full experience");
+    </script>
+  </body>
+</html>
