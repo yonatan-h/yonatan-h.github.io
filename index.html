@@ -1,12 +1,12 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV</title>
+    <title>CV | Yonatan</title>
     <style>
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6rem;
 
         font-family: monospace;
         background-color: black;
@@ -28,16 +28,44 @@
 
         z-index: -1;
       }
+
+      .forest-unit {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .tree {
+        height: 6rem;
+        opacity: 0.15;
+      }
+
+      @media screen and (max-width: 500px) {
+        body {
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+        .tree {
+          height: 2rem;
+        }
+        main {
+          grid-column: 1/-1;
+        }
+      }
     </style>
   </head>
   <body>
+    <div class="mouse-follower"></div>
+
     <main>
       <h1>Yonatan Haile</h1>
 
       <section>
         <h2>Who Am I?</h2>
-        <p>About to be a third year software student in AAiT.</p>
-        <p>Currently <b>exploring</b> the vast land of Web Development.</p>
+        <p>Hello</p>
+        <p>I am exploring the <b>vast land</b> of Web Development.</p>
+        <p>I'm about to be a third year software student in AAiT.</p>
       </section>
 
       <section>
@@ -55,6 +83,7 @@
         </ul>
         <p>I am Eager to learn and apply these skills</p>
       </section>
+
       <section>
         <h2>Contact Me</h2>
         <address>
@@ -63,8 +92,8 @@
       </section>
     </main>
 
-    <div class="mouse-follower"></div>
     <script>
+      //setup big circular cursor
       const mouseFollower = document.querySelector(".mouse-follower");
       document.addEventListener("mousemove", (event) => {
         const mouseX = event.clientX;
@@ -73,6 +102,31 @@
         mouseFollower.setAttribute("style", positionCss);
       });
 
+      //populate the screen with patches of forest
+      function getTree() {
+        const treeImage = document.createElement("img");
+        treeImage.setAttribute("src", "tree.svg");
+        treeImage.setAttribute("alt", "");
+        treeImage.classList.add("tree");
+        return treeImage;
+      }
+      function getForestUnit() {
+        const treesPerForest = 2;
+        const forestUnit = document.createElement("div");
+        forestUnit.classList.add("forest-unit");
+        for (let i = 0; i < treesPerForest; i++) {
+          forestUnit.appendChild(getTree());
+        }
+        return forestUnit;
+      }
+      function populateWithForest() {
+        const body = document.body;
+        for (let i = 0; i < 4; i++) body.prepend(getForestUnit());
+        for (let i = 0; i < 4; i++) body.appendChild(getForestUnit());
+      }
+      populateWithForest();
+
+      //recomment users to use desktop/laptop
       window.alert(
         "If you are on mobile, please use a desktop/laptop for full experience "
       );
