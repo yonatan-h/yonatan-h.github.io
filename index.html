@@ -4,28 +4,28 @@
     <title>CV</title>
     <style>
       body {
-        font-family: monospace;
-        background-color: black;
-        color: back;
-        overflow: hidden;
-      }
-      body {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        font-family: monospace;
+        background-color: black;
+        color: black;
       }
+
       .mouse-follower {
-        width: 50vmax;
-        height: 50vmax;
+        width: 40rem;
+        height: 40rem;
         border-radius: 100%;
 
-        position: absolute;
+        position: fixed;
         top: 0px;
         left: 0px;
         transform: translate(-50%, -50%);
 
         background-color: white;
-        box-shadow: 0 0 5rem white;
+        box-shadow: 0 0 20rem white;
+
         z-index: -1;
       }
     </style>
@@ -37,7 +37,7 @@
       <section>
         <h2>Who Am I?</h2>
         <p>About to be a third year software student in AAiT.</p>
-        <p>Currently exploring the vast land of Web Development.</p>
+        <p>Currently <b>exploring</b> the vast land of Web Development.</p>
       </section>
 
       <section>
@@ -67,9 +67,9 @@
     <script>
       const mouseFollower = document.querySelector(".mouse-follower");
       document.addEventListener("mousemove", (event) => {
-        const x = event.clientX;
-        const y = event.clientY;
-        const positionCss = `top:${y}px; left:${x}px;`;
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+        const positionCss = `top:${mouseY}px; left:${mouseX}px;`;
         mouseFollower.setAttribute("style", positionCss);
       });
 
