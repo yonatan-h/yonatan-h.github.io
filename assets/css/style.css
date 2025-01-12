@@ -18,28 +18,12 @@ body {
   flex-wrap: wrap;
   background-color: #13142c;
   max-width: 100%;
-  overflow: hidden;
+  height: 470px;
   padding: 20px;
   color: goldenrod;
+  overflow-x: hidden;
   margin-top: 30px;
 }
-
-.homeBtn {
-  cursor: pointer;
-  background-color: blue;
-  /* position: absolute; */
-  top: 15px;
-  left: 15px;
-  width: 120px;
-  height: 40px;
-  color: white;
-  text-align: center;
-  border-radius: 8%;
-  box-shadow: 3px 4px rgb(0 0 0 / 25%);
-  padding-top: 16px;
-  margin-left: 10px;
-}
-
 /*notification*/
 #notification {
   position: absolute;
@@ -49,6 +33,7 @@ body {
   z-index: 10;
   border: 8px solid black;
   border-radius: 12px;
+  transition: 1s;
   color: #000;
 }
 
@@ -112,7 +97,7 @@ body {
 
 .bbtop {
   margin-left: 2px;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 .bbtoptwo {
@@ -128,6 +113,7 @@ body {
 }
 
 .number_board {
+  margin-left: 0px;
   display: grid;
   grid-template-columns: repeat(13, 1fr);
   /* 12 columns of equal width */
@@ -145,7 +131,7 @@ body {
 }
 
 .nbn {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   letter-spacing: 2px;
   transform: rotate(-90deg);
@@ -162,6 +148,7 @@ body {
   margin-left: 1px;
   display: flex;
   flex-wrap: nowrap;
+
 }
 
 .bo3_block,
@@ -185,9 +172,9 @@ body {
 
 .tt1_block {
   border: 2px solid;
+  padding: auto;
   justify-content: center;
   align-items: center;
-  display: flex;
 }
 
 .tt1_block .nbn {
@@ -956,50 +943,15 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-  #notification {
-    width: 80%;
-    height: 400px;
-  }
-  .nSpan {
-    font-size: 40px;
-  }
-
-  .nsnumber {
-    margin-left: 10px;
-  }
-
-  .nsWin {
-    position: absolute;
-    left: 4px;
-  }
-
-  .nsWinBlock {
-    font-size: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
   #betting_board {
-    width: 86%;
-    overflow-x: hidden;
-    margin: 0%;
+    width:86%;
   }
-  #numberboard {
-    max-width: 95%;
-    margin: 0%;
-    overflow: hidden;
+  #numberboard{
+    width:100%
   }
-  #container {
+  #container{
     height: 100%;
-    margin-left: -5%;
-    padding-left: 0%;
-    width: 98vw;
-  }
-  .nbn {
-    font-size: 14px;
-  }
-  .oto_board,
-  .bo3_board {
-    width: 100%;
+    width: 98vw
   }
   .wlttb {
     width: 55%;
@@ -1037,6 +989,7 @@ body {
   #wlrtl_10 {
     margin-left: 3%;
   }
+
 }
 
 #loading img {
@@ -1073,6 +1026,5 @@ body {
 @media screen and (min-width: 768px) {
   #container {
     overflow-y: hidden;
-    height: 80vh;
   }
 }
